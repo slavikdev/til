@@ -6,6 +6,7 @@ This is a living collection of new findings, coding tips and gotchas that I foun
 
 #### Create train/split datasets with a mask
 
+This code splits the dataset in 80% for training and 20% for testing:
 ```python
 mask = np.random.rand(len(df)) < 0.8
 train = data_set[mask]
