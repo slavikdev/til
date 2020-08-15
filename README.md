@@ -23,3 +23,20 @@ When you pass step size `-1` it reverses the string:
 ```python
 mystring[::-1]
 ```
+
+## Golang
+
+#### defer call order
+
+Since I normally use only one `defer` statement, I never thought of the execution order. Actually it’s LIFO:
+
+```go
+defer print(2)
+defer print(1)
+```
+
+So that will actually be printed as `12`, even though the `2` statement is first. More practical case, if you want to close and then remove a file:
+```go
+defer os.Remove(f.Name())
+defer f.Close()
+```
