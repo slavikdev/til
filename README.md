@@ -40,3 +40,21 @@ So that will actually be printed as `12`, even though the `2` statement is first
 defer os.Remove(f.Name())
 defer f.Close()
 ```
+
+## C#
+
+#### Convert object to a template method type
+
+If you want to convert `object` value to a type, specified in a template method, there’s a way to do it without `if-s` and `case-es`:
+
+```csharp
+private T GetValue<T>(object objVal)
+{
+   var converter = TypeDescriptor.GetConverter(typeof(T));
+   if (converter == null)
+   {
+      return default(T);
+   }
+   return (T)converter.ConvertFrom(objVal);
+}
+```
