@@ -58,3 +58,15 @@ private T GetValue<T>(object objVal)
    return (T)converter.ConvertFrom(objVal);
 }
 ```
+
+## TypeScript
+
+#### Type casting to an object with methods
+
+If you have a class with attributes and methods and you want to type cast a JSON object to an instance of the class, then `const obj = json as MyClass` will only assign attributes, i.e. later calling something like `obj.myMethod()` will cause a no method error. To create a proper object you need to use `Object.assign`:
+
+```typescript
+const obj = Object.assign(new MyClass(), json as MyClass)
+obj.myMethod() // this will work now
+```
+
