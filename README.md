@@ -24,6 +24,12 @@ When you pass step size `-1` it reverses the string:
 mystring[::-1]
 ```
 
+and you can reverse every word in a string, maintaining the word order:
+
+```python
+' '.join(s[::-1] for s in strs.split())
+```
+
 ## Golang
 
 #### defer call order
