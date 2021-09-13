@@ -30,6 +30,19 @@ and you can reverse every word in a string, maintaining the word order:
 ' '.join(s[::-1] for s in strs.split())
 ```
 
+#### Create array/matrix with prefilled values
+
+Creates 3x3 matrix where all elements equal to -1:
+
+```python
+[[-1]*3]*3
+```
+
+```bash
+[[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]
+```
+
+
 ## Golang
 
 #### defer call order
