@@ -42,6 +42,13 @@ Creates 3x3 matrix where all elements equal to -1:
 [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]
 ```
 
+_This approach should be avoided, because it creates list of references to the same element!_
+Instead a list comprehension should be used:
+
+```python
+[[-1]*3 for _ in range(3)]
+```
+
 
 ## Golang
 
